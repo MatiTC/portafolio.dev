@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import GitHub from '../components/icons/GitHub.astro';
+import SocialPill from '../components/icons/SocialPill.astro';
+import Mail from '../components/icons/Mail.astro';
+---
+
+<Layout
+  title="Portafolio de Matias Tardones C. Desarrollador y Programador Web"
+  descripcion="Desarrollador trainee. Con ganas de obtner experincias como desarrollador"
+  '
+>
+  <main>
+    <section class="w-full mx-auto lg:w-[740px] py-44">
+   
+      <img
+        class="rounded-full w-14 h-14 mb-4"
+        src="mumei.jpg"
+        alt="matias phote"
+      />
+      <div class="flex flex-col">
+        <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+          ¡Oh, hola! , Soy Nanashi Mumei <Badge>Disponible para trabajar</Badge>
+        </h1>
+        <h1>Hola soy una columna </h1>
+      </div>
+      <h2 class="text-2xl opacity-80 text-wrap">
+        <span class="text-red-100">El Guardián de la Civilización</span>, un
+        búho viajero que ha sido testigo de numerosos acontecimientos.
+      </h2>
+      <nav class="flex gap-x-2 mt-6">
+        <SocialPill
+          href="https://www.linkedin.com/in/matias-tardones-ceballos-50785b259/"
+        >
+          <LinkedIn class="size-6" />LinkeIn
+        </SocialPill>
+        <SocialPill href="https://github.com/MatiTC">
+          <GitHub class="size-6" /> GitHub
+        </SocialPill>
+        <SocialPill href="mailto:mtardones99@gmail.com">
+          <Mail class="size-6" /> mtardones99@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
+</Layout>
