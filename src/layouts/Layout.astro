@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
 import '@fontsource/roboto';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -20,9 +21,10 @@ const { descripcion ,title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body >
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -31,11 +33,18 @@ const { descripcion ,title } = Astro.props;
   }
   html {
     font-family: 'Onest Variable', system-ui, sans-serif, 'Roboto';
+    scroll-behavior: smooth;/* scroll suave */
   }
   body {
     background-color: #101216;
     display: flex;
     flex-direction: column;
     height: 100vh;
+  }
+  /* por si quitan las animaciones */
+  @media (prefers-reduced-motion: reduce){
+    html{
+      scroll-behavior: auto;
+    }
   }
 </style>
