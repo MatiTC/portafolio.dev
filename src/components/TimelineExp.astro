@@ -1,12 +1,13 @@
 ---
 import Experience from './Experience.astro';
-const EXPERIENCIE = [
+const EXPERIENCE = [
   {
     title: 'Desarrollo de aplicacíon web para Universidad del bío-bío',
     date: 'Segundo semetre 2023',
     description:
       'Desarrollo de aplicación web para el registro, monitoreo y análisis de variables ambientales del edificio sensorizado del citec de la  Universidad del bío-bío, Chile',
     technology: 'Reacts, Node.js',
+    color: 'text-[#091f92]'
   },
   {
     title: 'Flowbite Application UI v2.0.0',
@@ -27,7 +28,7 @@ const EXPERIENCIE = [
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
   {
-    EXPERIENCIE.map((experience) => (
+    EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-6">
         <Experience {...experience} />
       </li>

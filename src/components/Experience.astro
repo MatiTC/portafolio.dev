@@ -4,9 +4,10 @@ export interface props{
     date: string,
     description: string,
     technology: string,
-    link?: string
+    link?: string,
+    color: string
 }
-const { title, date, description, technology, link } = Astro.props;
+const { title, date, description, technology, link,color } = Astro.props;
 ---
 
 <li class="mb-10 ms-6">
@@ -26,7 +27,7 @@ const { title, date, description, technology, link } = Astro.props;
     </svg>
   </span>
   <h3
-    class="flex items-center mb-1 text-lg font-semibold  dark:text-white">
+    class=`flex items-center mb-1 text-lg font-semibold ${color}`>
     {title}
   </h3>
   <time

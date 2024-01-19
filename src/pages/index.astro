@@ -7,6 +7,8 @@ import SocialPill from '../components/icons/SocialPill.astro';
 import Mail from '../components/icons/Mail.astro';
 import TimelineExp from '../components/TimelineExp.astro';
 import SectionCompone from '../components/SectionCompone.astro';
+import Proyects from '../components/Proyects.astro';
+import Contribution from '../components/Contribution.astro';
 ---
 
 <Layout
@@ -23,7 +25,9 @@ import SectionCompone from '../components/SectionCompone.astro';
           alt="matias phote"
         />
         <div class="w-2/3">
-          <h1 class="text-white text-2xl md:text-4xl font-bold pb-4 flex flex-col gap-x-4 lg:pb-10">
+          <h1
+            class="text-white text-2xl md:text-4xl font-bold pb-4 flex flex-col gap-x-4 lg:pb-10"
+          >
             ¡Nanashi Mumei!
           </h1>
           <span class="text-red-100">七詩ムメイ</span>
@@ -33,9 +37,10 @@ import SectionCompone from '../components/SectionCompone.astro';
         <span class="text-red-100">El Guardián de la Civilización</span>, un
         búho viajero que ha sido testigo de numerosos acontecimientos.
       </h2>
-      <nav class="flex gap-x-4 mt-8 flex-wrap ">
+      <nav class="flex gap-x-4 mt-8 flex-wrap">
         <SocialPill
-          href="https://www.linkedin.com/in/matias-tardones-ceballos-50785b259/">
+          href="https://www.linkedin.com/in/matias-tardones-ceballos-50785b259/"
+        >
           <LinkedIn class="size-4 md:size-6" />LinkeIn
         </SocialPill>
         <SocialPill href="https://github.com/MatiTC">
@@ -46,18 +51,29 @@ import SectionCompone from '../components/SectionCompone.astro';
         </SocialPill>
         <Badge>Open to Work</Badge>
       </nav>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
     </SectionCompone>
 
-    <SectionCompone id="sobre-mi"></SectionCompone>
+    <SectionCompone id="sobre-mi">
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
+    </SectionCompone>
+
     <SectionCompone id="experiencia">
-      <h2 class="text-2xl font-semibold mb-2"> >>Experiencia</h2>
+      <h2 class="text-2xl font-semibold mb-2">>>Experiencia</h2>
       <TimelineExp />
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
     </SectionCompone>
 
     <SectionCompone id="proyectos">
-      <h2 class="text-2xl font-semibold mb-2"> >>Proyectos</h2>
-      <TimelineExp />
+      <h2 class="text-2xl font-semibold mb-2">>>Proyectos</h2>
+      <Proyects />
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
     </SectionCompone>
-    <SectionCompone id="contacto"></SectionCompone>
+
+    <SectionCompone id="Contribuciones">
+      <h2 class="text-2xl font-semibold mb-2">>>Contribuciones y estudios</h2>
+      <Contribution/>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
+    </SectionCompone>
   </main>
 </Layout>

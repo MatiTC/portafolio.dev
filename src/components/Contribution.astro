@@ -1,0 +1,35 @@
+---
+import CardContribution from './CardContribution.astro';
+
+const CONTRIBUTION = [
+  {
+    title: 'Roadmap Retos Programacion 2024',
+    description:
+      'Ruta de estudio con ejercicios para mejorar tu lógica de programación y aprender cualquier lenguaje. Gratis, a tu ritmo y en comunidad.',
+    by: 'mouredev',
+    date: '2024',
+    link: 'https://github.com/mouredev/roadmap-retos-programacion',
+    githubmy: 'https://github.com/MatiTC/roadmap-retos-programacion',
+  },
+  {
+    title: 'FullStackOpen ',
+    description: 'Inmersión Profunda en el Desarrollo Web Moderno. El enfoque principal es crear aplicaciones de una sola página con ReactJS que utilizan API REST creadas con Node.js.',
+    by: 'Universidad de Helsinki ',
+    date: '2024',
+    link: 'https://fullstackopen.com/es/',
+    githubmy: 'https://github.com/MatiTC/fullstackopen',
+  },
+];
+---
+
+<section class="grid grid-cols-2 gap-4">
+  {
+    CONTRIBUTION.map((contribution) => (
+      <div class="max-w-sm bg-white 
+        border border-gray-200 rounded-lg
+        shadow dark:bg-gray-800 dark:border-gray-700 p-2">
+        <CardContribution {...contribution} />
+      </div>
+    ))
+  }
+</section>

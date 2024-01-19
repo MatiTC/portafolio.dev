@@ -1,0 +1,92 @@
+---
+import CardProyects from './CardProyects.astro';
+import NextJS from './icons/Nextjs.astro';
+import Tailwind from './icons/Tailwind.astro';
+import React from './icons/React.astro';
+import NodeJs from './icons/Node.astro';
+import ExpressJs from './icons/Express.astro';
+import Vite from './icons/Vite.astro';
+import Boostrap from './icons/Boostrap.astro';
+import AstroIcon from './icons/AstroIcon.astro';
+import type { Code } from 'astro:components';
+
+const TAGS = {
+  NEXT: {
+    name: 'Next.js',
+    class: 'bg-black text-white',
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#003159] text-white',
+    icon: Tailwind,
+  },
+  REACT: {
+    name: 'Reacts framework',
+    class: 'bg-[#003159] text-white',
+    icon: React,
+  },
+  NODE: {
+    name: 'NodeJs library',
+    class: 'bg-[#003159] text-white',
+    icon: NodeJs,
+  },
+  EXPRESS: {
+    name: 'Express.js framework',
+    class: 'bg-[#003159] text-white',
+    icon: ExpressJs,
+  },
+  Vite: {
+    name: 'Vite compiler',
+    class: 'bg-[#003159] text-white',
+    icon: Vite,
+  },
+  Boostrap: {
+    name: 'Boostrap 5 library CSS',
+    class: 'bg-[#003159] text-white',
+    icon: Boostrap,
+  },
+  ASTRO: {
+    name: 'Astro framework',
+    class: 'bg-[#003159] text-white',
+    icon: AstroIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: 'App CITEC UBB',
+    descripcion:
+      'Desarrollo de aplicación web para la muestra del registro y monitoreo de variables ambientales para el edificio sensorizado del CITEC.',
+    link: '#',
+    github: '#',
+    image: 'CITEC.jpg',
+    alt: 'Imagen del home de la app Citec',
+    estado: 'privado',
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS],
+  },
+  {
+    title: 'Porfafolio-dev',
+    descripcion:
+      'Portafolio desarrollado con Astro y Tailwind por Matias Tardones C.',
+    link: '#',
+    github: 'https://github.com/MatiTC/portafolio.dev',
+    image: 'CITEC.jpg',
+    estado: 'publico',
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
+];
+---
+<section class="grid grid-cols-3 gap-4">
+  {
+    PROJECTS.map((proyect) => (
+      <div
+        class="max-w-sm bg-white 
+        border border-gray-200 rounded-lg
+        shadow dark:bg-gray-800 dark:border-gray-700 p-2"
+      >
+        <CardProyects {...proyect} />
+      </div>
+    ))
+  }
+</section>
