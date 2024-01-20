@@ -78,14 +78,13 @@ const PROJECTS = [
 ];
 ---
 
-<section class="grid grid-cols-3 gap-4">
+<section class="grid grid-cols-2 gap-4 mt-">
   {
     PROJECTS.map((proyect) => (
       <div
-        class="max-w-sm bg-white 
-        border border-gray-200 rounded-lg
-        shadow
-      dark:bg-red-100 dark:border-gray-700 p-2"
+        class="max-w-sm  p-4 
+        border border-s border-blue-200  bg-[#2a323d] rounded-lg
+      "
       >
         <CardProyects {...proyect} />
       </div>
