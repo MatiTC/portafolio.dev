@@ -2,31 +2,30 @@
 import Experience from './Experience.astro';
 const EXPERIENCE = [
   {
-    title: 'Desarrollo de aplicacíon web para Universidad del bío-bío',
+    place: 'Universidad del Bío-Bío',
+    spell: 'U',
+    title: 'Aplicacíon web CITEC',
     date: 'Segundo semetre 2023',
     description:
-      'Desarrollo de aplicación web para el registro, monitoreo y análisis de variables ambientales del edificio sensorizado del citec de la  Universidad del bío-bío, Chile',
+      'Diseñar y desarrollar una aplicación web intuitiva y escalable para el monitoreo, registro y análisis de variables ambientales en tiempo real del edificio sensorizado del CITEC de Universidad del Bío-Bío',
     technology: 'Reacts, Node.js',
-    color: 'text-[#091f92]'
+    color: 'text-[#0092ff]'
   },
   {
-    title: 'Flowbite Application UI v2.0.0',
-    date: 'Released on January 13th, 2022',
+    place: 'Freelancer',
+    spell: 'F',
+    title: 'Fullstack ',
+    date: '2024',
     description:
-      'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    technology: 'astro, tolied',
+      'Desarrollo de la aplicacion open source de galeria de Hololive Japon, Indonesia e Ingles. Aporte de la comunidad de Hololive Hispana',
+    technology: 'Reacts, Boostrap',
+    color: 'text-[#ffaff8]'
   },
-  {
-    title: 'Flowbite Application UI v2.0.0',
-    date: 'Released on January 13th, 2022',
-    description:
-      'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    technology: 'astro, tolied',
-  },
+
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+<ol class="relative border-s border-gray-200 ml-3">
   {
     EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-6">

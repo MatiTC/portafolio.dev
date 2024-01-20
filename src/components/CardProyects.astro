@@ -1,4 +1,7 @@
 ---
+import ButtonLink from './ButtonLink.astro';
+import GitHub from './icons/GitHub.astro';
+import WebSite from './icons/WebSite.astro';
 const { title, descripcion, link, github, image, alt, estado, tags } =
   Astro.props;
 ---
@@ -25,6 +28,10 @@ const { title, descripcion, link, github, image, alt, estado, tags } =
 </ul>
 <p class="p-5 text-red-950">{estado}</p>
 <div class="p-5">
-  <a href={github} class="text-red-500">GitHub</a>
-  <a href={link} class="text-red-500">Visita</a>
+  <ButtonLink href={github}>
+    <GitHub class="size-6">GitHub</GitHub>
+  </ButtonLink>
+  <ButtonLink href={link}>
+    <WebSite class="size-6">Visitar</WebSite>
+  </ButtonLink>
 </div>

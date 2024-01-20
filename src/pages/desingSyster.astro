@@ -1,0 +1,30 @@
+---
+import Badge from '@/components/Badge.astro';
+import SectionCompone from '@/components/SectionCompone.astro';
+import AstroIcon from '@/components/icons/AstroIcon.astro';
+import SocialPill from '@/components/icons/SocialPill.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Desing Syster portafolio.dev"
+  descripcion="Catalogo de componenetes. Prueba de un DisingSyster"
+>
+<SectionCompone class="py-44 pb-32 flex flex-col gap-y-10">
+    <article class="mb-10">
+      <h1 class="mb-4 text-xl font-semibold">&lt;Badge /&gt;</h1>
+
+      <Badge>Open to work</Badge>
+    </article>
+
+    <article class="mb-10">
+      <h1 class="mb-4 text-xl font-semibold">&lt SocialPill /&gt;</h1>
+
+      <div class="flex">
+        <SocialPill href="https://linkedin.com/in/midudev">
+          <AstroIcon class="size-4 md:size-6" />
+        </SocialPill>
+      </div>
+    </article>
+  </SectionCompone>
+</Layout>
