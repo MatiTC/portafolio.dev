@@ -7,9 +7,10 @@ const CONTRIBUTION = [
     description:
       'Ruta de estudio con ejercicios para mejorar tu lógica de programación y aprender cualquier lenguaje. Gratis, a tu ritmo y en comunidad.',
     by: 'mouredev',
-    date: '2024',
+    date: 'Actualmente - 2024 ',
     link: 'https://github.com/mouredev/roadmap-retos-programacion',
     githubmy: 'https://github.com/MatiTC/roadmap-retos-programacion',
+    color: 'text-cyan-400'
   },
   {
     title: 'FullStackOpen ',
@@ -22,12 +23,12 @@ const CONTRIBUTION = [
 ];
 ---
 
-<section class="grid grid-cols-2 gap-4">
+<section class="grid grid-cols-2 gap-4  mt-">
   {
     CONTRIBUTION.map((contribution) => (
-      <div class="max-w-sm bg-white 
+      <div class="max-w-sm bg-[#2a323d]
         border border-gray-200 rounded-lg
-        shadow dark:bg-gray-800 dark:border-gray-700 p-2">
+        shadow dark:bg-gray-800 dark:border-gray-700 p-4">
         <CardContribution {...contribution} />
       </div>
     ))

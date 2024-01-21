@@ -1,39 +1,38 @@
 ---
-const { title, description, by, date, link, githubmy } = Astro.props;
+import ButtonLink from './ButtonLink.astro';
+import GitHub from './icons/GitHub.astro';
+import WebSite from './icons/WebSite.astro';
+
+const { title, description, by, date, link, githubmy, color } = Astro.props;
 ---
 
-<a href="#">
-  <h5
-    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+<div class="opacity-80">
+  <div class=`text-xl font-bold tracking-tight
+      ${color} dark:text-white`>
+    {title}
+  </div>
+
+  <time class="block mb-2 mt-2 px-2 text-sm font-normal leading-none"
+    >{date}</time
   >
-    {title} 
-  </h5>
-</a>
-<p class="text-black">{date}-{by}</p>
-<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-{description}
-</p>
-<a
-  href="#"
-  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
->
-  Read more
-  <svg
-    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 14 10"
-  >
-    <path
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-  </svg>
-</a>
-<div class="text-black">
-    <a href={link}>Leer más</a>
-    <a href={githubmy}>GitHub</a>
+  <p class="block mb-2 mt-2 px-2 text-sm font-normal leading-none">
+    by: {by}
+  </p>
+
+  <hr class="my-2 border-white opacity-80 lg:my-2" />
+  <p class="mb-2 pt-2 text-base font-normal h-32 text-md text-gray-100 text-pretty">
+    {description}
+  </p>
+  <hr class="my-2 border-white opacity-80 lg:my-2" />
+
+  <div class="p-2 flex flex-row justify-center">
+    <ButtonLink href={link}>
+      <WebSite class="size-6" />
+      Web
+    </ButtonLink>
+    <ButtonLink href={githubmy}>
+      <GitHub class="size-6" />
+      My GitHub
+    </ButtonLink>
+  </div>
 </div>

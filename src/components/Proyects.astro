@@ -59,10 +59,10 @@ const PROJECTS = [
     descripcion:
       'Desarrollo de aplicación web para la muestra del registro y monitoreo de variables ambientales para el edificio sensorizado del CITEC.',
     link: '#',
-    github: '#',
+    github: 'https://github.com/MatiTC/CitecFrontend03',
     image: 'CITEC.jpg',
     alt: 'Imagen del home de la app Citec',
-    estado: 'privado',
+    estado: 'Privado',
     tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS],
   },
   {
@@ -72,18 +72,18 @@ const PROJECTS = [
     link: '#',
     github: 'https://github.com/MatiTC/portafolio.dev',
     image: 'CITEC.jpg',
-    estado: 'publico',
+    estado: ' Publico',
     tags: [TAGS.ASTRO, TAGS.TAILWIND],
   },
 ];
 ---
 
-<section class="grid grid-cols-2 gap-4 mt-">
+<section class="grid grid-cols-2 gap-4 mt-6">
   {
     PROJECTS.map((proyect) => (
       <div
         class="max-w-sm  p-4 
-        border border-s border-blue-200  bg-[#2a323d] rounded-lg
+        border border-s border-gray-200  bg-[#2a323d] rounded-lg shadow
       "
       >
         <CardProyects {...proyect} />
