@@ -3,15 +3,16 @@ import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
 import '@fontsource/roboto';
 import Footer from '../components/Footer.astro';
+import ThemeScript from '@/components/ThemeScript.astro';
 
 interface Props {
   title: string;
   descripcion: string;
 }
-const { descripcion ,title } = Astro.props;
+const { descripcion, title } = Astro.props;
 ---
 
-<!doctype html>
+
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -20,12 +21,12 @@ const { descripcion ,title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ThemeScript/>
   </head>
-  <body >
-    
+  <body class="bg-slate-200 dark:bg-[#1c1f25]">
     <Header />
     <slot />
-    <Footer id="contacto"/>
+    <Footer id="contacto" />
   </body>
 </html>
 <style is:global>
@@ -34,7 +35,7 @@ const { descripcion ,title } = Astro.props;
   }
   html {
     font-family: 'Onest Variable', system-ui, sans-serif, 'Roboto';
-    scroll-behavior: smooth;/* scroll suave */
+    scroll-behavior: smooth; /* scroll suave */
   }
   body {
     background-color: #1c1f25;
@@ -44,8 +45,8 @@ const { descripcion ,title } = Astro.props;
     overscroll-behavior: none;
   }
   /* por si quitan las animaciones */
-  @media (prefers-reduced-motion: reduce){
-    html{
+  @media (prefers-reduced-motion: reduce) {
+    html {
       scroll-behavior: auto;
     }
   }

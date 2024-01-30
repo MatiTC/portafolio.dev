@@ -8,7 +8,8 @@ import ExpressJs from './icons/Express.astro';
 import Vite from './icons/Vite.astro';
 import Boostrap from './icons/Boostrap.astro';
 import AstroIcon from './icons/AstroIcon.astro';
-import MySql from './icons/MySql.astro'
+import MySql from './icons/MySql.astro';
+import Canvas from './icons/Canvas.astro';
 
 export const TAGS = {
   NEXT: {
@@ -56,6 +57,11 @@ export const TAGS = {
     class: 'bg-[#003159] text-white',
     icon: MySql,
   },
+  Canvas: {
+    name: 'Canvas',
+    class: 'bg-black text-white',
+    icon: Canvas,
+  },
 };
 
 const PROJECTS = [
@@ -72,9 +78,9 @@ const PROJECTS = [
     color: 'text-blue-700',
   },
   {
-    title: 'FanPage Hololive',
+    title: 'FanPage Hololive Es',
     descripcion:
-      'Portafolio desarrollado con Astro y Tailwind por Matias Tardones C.',
+      'Página web para la comunidad de Hololive Hispana. Descripción e informacion de las talentosas miembros de Hololive.',
     link: '#',
     github: 'https://github.com/MatiTC/portafolio.dev',
     image: 'hololivePage.jpg',
@@ -88,7 +94,7 @@ const PROJECTS = [
 <section class="grid grid-cols-auto-fill-minmax-300 gap-x-4 gap-y-8">
   {
     PROJECTS.map((proyect) => (
-      <div class="mx-auto max-w-sm p-4 border border-s rounded-lg bg-[#2a323d] shadow opacity-90 text-slate-100">
+      <div class="mx-auto max-w-sm p-4 border border-s rounded-lg dark:bg-[#2a323d] bg-gray-300 shadow opacity-90 text-slate-100">
         <CardProyects {...proyect} />
       </div>
     ))

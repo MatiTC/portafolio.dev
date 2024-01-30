@@ -7,32 +7,34 @@ const { title, description, by, date, link, githubmy, color } = Astro.props;
 ---
 
 <div class="flex flex-col w-auto">
-  <div class=`text-xl font-medium mb-2 tracking-tight
-      ${color} dark:text-white`>
+  <div
+    class=`text-xl font-medium mb-2 tracking-tight
+      ${color} `
+  >
     {title}
   </div>
 
-  <time class="block my-1 text-sm font-normal leading-none"
-    >{date}</time
-  >
-  <p class="block text-sm font-normal leading-none">
+  <time class="block my-1 text-sm font-normal leading-none dark:text-slate-300 text-slate-700">{date}</time>
+  <p class="block text-sm font-normal leading-none dark:text-slate-300 text-slate-700">
     by: {by}
   </p>
 
-  <hr class="my-2 border-white opacity-80 lg:my-2" />
-  <p class="mb-2 pt-2 text-base font-normal h-32 text-md text-gray-100 text-pretty">
+  <hr class="my-2 dark:border-gray-200  border-gray-700 opacity-80 lg:my-2" />
+  <p
+    class="mb-2 pt-2 text-base font-normal h-32 text-md dark:text-slate-300 text-slate-700 text-pretty"
+  >
     {description}
   </p>
-  <hr class="my-2 border-white opacity-80 lg:my-2" />
+  <hr class="my-2 dark:border-gray-200  border-gray-700 opacity-80 lg:my-2" />
 
   <div class="p-4 md:p-2 flex justify-around">
-    <ButtonLink href={link}>
-      <WebSite class="size-8 md:size-6" />
-      Web
-    </ButtonLink>
     <ButtonLink href={githubmy}>
       <GitHub class="size-8 md:size-6" />
       My GitHub
+    </ButtonLink>
+    <ButtonLink href={link}>
+      <WebSite class="size-8 md:size-6" />
+      Web
     </ButtonLink>
   </div>
 </div>

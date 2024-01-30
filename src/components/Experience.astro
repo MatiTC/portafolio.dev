@@ -38,18 +38,18 @@ const {
   </h2>
 </div>
 <div
-  class="bg-[#2a323d] p-4 mt-4 md:py-4 md:px-4
+  class="dark:bg-[#2a323d] bg-gray-300 p-4 mt-4 md:py-4 md:px-4
     border border-s rounded-lg opacity-90 text-slate-100"
 >
-  <h3 class=`flex items-center text-xl font-semibold text-slate-100`>
+  <h3 class=`flex items-center text-xl font-semibold dark:text-slate-100 text-slate-800`>
     {title}
   </h3>
-  <time class="block mb-6 mt-2 text-sm font-normal leading-none text-slate-100">{date}</time>
-  <p class="mb-4 text-base font-normal text-md text-pretty text-slate-300">
+  <time class="block mb-6 mt-2 text-sm font-normal leading-none dark:text-slate-100 text-slate-800">{date}</time>
+  <p class="mb-4 text-base font-normal text-md text-pretty dark:text-slate-300 text-slate-700">
     {description}
   </p>
   <Separacion class="lg:my-4" />
-  <p class="my-2 text-lg font-semibold underline decoration-sky-500 text-slate-100">
+  <p class="my-2 text-lg font-semibold underline dark:decoration-sky-500 decoration-sky-600 dark:text-slate-100 text-slate-800">
     Tecnologias
   </p>
   <div class="grid grid-flow-col auto-cols-max gap-x-3 mb-2">
@@ -58,8 +58,8 @@ const {
         <div class="relative group">
           <span class="flex gap-x-2">
             <tag.icon
-              class={`size-6 flex gap-x-2 rounded-full text-xs bg-[#2a323d] ${tag.class}
-              hover:bg-slate-900 hover:opacity-90 
+              class={`size-6 flex gap-x-2 rounded-full text-xs dark:bg-[#2a323d] bg-gray-300 ${tag.class}
+              dark:hover:bg-slate-900 hover:bg-slate-200 hover:opacity-90 
               `}
             />
           </span>
