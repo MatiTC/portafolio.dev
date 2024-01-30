@@ -1,6 +1,7 @@
 ---
 import AboutMe from '../components/AboutMe.astro';
 import Badge from '../components/Badge.astro';
+import BuldingCity from '@/components/icons/BuldingCity.astro';
 import Contribution from '../components/Contribution.astro';
 import GitHub from '../components/icons/GitHub.astro';
 import Layout from '../layouts/Layout.astro';
@@ -8,9 +9,15 @@ import LinkedIn from '../components/icons/LinkedIn.astro';
 import Mail from '../components/icons/Mail.astro';
 import Proyects from '../components/Proyects.astro';
 import SectionCompone from '../components/SectionCompone.astro';
+import Separacion from '@/components/Separacion.astro';
 import SocialPill from '../components/icons/SocialPill.astro';
 import TimelineExp from '../components/TimelineExp.astro';
-import Separacion from '@/components/Separacion.astro';
+import Presentation from '@/components/icons/Presentation.astro';
+import Brackets from '@/components/icons/Brackets.astro';
+import UserPlus from '@/components/icons/UserPlus.astro';
+
+const classIndexH2 =
+  'flex gap-x-3 items-center text-3xl font-bold text-slate-100 mb-6';
 ---
 
 <Layout
@@ -19,9 +26,11 @@ import Separacion from '@/components/Separacion.astro';
   '
 >
   <main class="px-4">
-    <SectionCompone id="top" class="py-44 pb-32">
-      <div class="flex flex-row justify-center">
-        <div class="w-1/4 flex flex-row justify-end items-center">
+    <SectionCompone id="top" class="py-32 md:py-44 pb-32">
+      <div class="flex flex-col md:flex-row md:justify-center">
+        <div
+          class="md:w-1/4 flex flex-row justify-center items-center md:justify-end md:items-center"
+        >
           <img
             class="rounded-full size-32 mb-4 mx-8
             ring-2 ring-[#76564a]"
@@ -29,24 +38,26 @@ import Separacion from '@/components/Separacion.astro';
             alt="matias phote"
           />
         </div>
-        <div class="w-3/4 flex flex-col px-4">
+        <div class="w-full px-6 my-2 flex flex-col md:w-3/4 md:px-4">
           <h1
-            class="text-white text-2xl font-bold pb-2 flex flex-col gap-x-4
-            md:text-3xl"
+            class="text-zinc-100 text-2xl font-bold pb-2 flex flex-col gap-x-4
+            md:text-3xl text-pretty"
           >
             Matias Tardones C.
           </h1>
-          <span class="text-[#76564a] pb-2 font-bold text-2xl">
+          <span class="text-amber-800 pb-2 font-bold text-2xl text-pretty">
             Trainee Desarrollador Web</span
           >
-          <span class="text-xl lg:text-1xl opacity-80 text-wrap max-w-[700px]">
+          <span class="text-xl lg:text-1xl text-zinc-100 opacity-80 text-wrap max-w-[700px]">
             Titulado de Ingeniería en Computación e Informática en la <span
-              class="text-[#096092] font-bold">Universidad del Bío-Bío</span
+              class="text-blue-700 font-semibold">Universidad del Bío-Bío</span
             > de Chile
           </span>
         </div>
       </div>
-      <nav class="flex justify-center gap-x-4 mt-8 flex-wrap">
+      <nav
+        class="flex flex-wrap justify-center gap-x-6 my-4 md:gap-x-4 mb:mt-8"
+      >
         <SocialPill
           href="https://www.linkedin.com/in/matias-tardones-ceballos-50785b259/"
         >
@@ -61,30 +72,37 @@ import Separacion from '@/components/Separacion.astro';
         <Badge>Open to Work</Badge>
       </nav>
     </SectionCompone>
-
     <SectionCompone id="experiencia">
-      <Separacion/>
-        <h2 class="text-3xl font-bold mb-2 mt-2 opacity-80  text-gray-100">>> Experiencia</h2>
+      <Separacion />
+      <h2 class={classIndexH2}>
+        <BuldingCity class="size-8" />
+        Experiencia
+      </h2>
       <TimelineExp />
     </SectionCompone>
-
     <SectionCompone id="proyectos">
-      <Separacion/>
-      <h2 class="text-3xl font-bold mb-2 mt opacity-80  text-gray-100">>>Proyectos</h2>
+      <Separacion />
+      <h2 class={classIndexH2}>
+        <Presentation class="size-8"/> 
+        Proyectos
+      </h2>
       <Proyects />
     </SectionCompone>
 
     <SectionCompone id="contribuciones">
-      <Separacion/>
-      <h2 class="text-2xl font-semibold mb-2">>>Contribuciones y estudios</h2>
+      <Separacion />
+      <h2 class={classIndexH2}>
+        <Brackets class="size-8"/>
+        Contribuciones y estudios</h2>
       <Contribution />
     </SectionCompone>
 
     <SectionCompone id="sobre-mi">
-      <Separacion/>
-      <h2 class="text-2xl font-semibold my-2 py-2">>>Sobre Mi</h2>
+      <Separacion />
+      <h2 class={classIndexH2}>
+        <UserPlus class="size-8"/>
+        Sobre Mi</h2>
       <AboutMe />
     </SectionCompone>
-
   </main>
 </Layout>

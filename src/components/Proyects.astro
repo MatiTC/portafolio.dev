@@ -8,8 +8,9 @@ import ExpressJs from './icons/Express.astro';
 import Vite from './icons/Vite.astro';
 import Boostrap from './icons/Boostrap.astro';
 import AstroIcon from './icons/AstroIcon.astro';
+import MySql from './icons/MySql.astro'
 
-const TAGS = {
+export const TAGS = {
   NEXT: {
     name: 'Next.js',
     class: 'bg-black text-white',
@@ -50,6 +51,11 @@ const TAGS = {
     class: 'bg-[#003159] text-white',
     icon: AstroIcon,
   },
+  MySql: {
+    name: 'MySql DB',
+    class: 'bg-[#003159] text-white',
+    icon: MySql,
+  },
 };
 
 const PROJECTS = [
@@ -62,7 +68,8 @@ const PROJECTS = [
     image: 'CITEC.jpg',
     alt: 'Imagen del home de la app Citec',
     estado: 'Privado',
-    tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS],
+    tags: [TAGS.REACT, TAGS.Vite, TAGS.Boostrap, TAGS.NODE, TAGS.EXPRESS, TAGS.MySql],
+    color: 'text-blue-700',
   },
   {
     title: 'FanPage Hololive',
@@ -70,21 +77,18 @@ const PROJECTS = [
       'Portafolio desarrollado con Astro y Tailwind por Matias Tardones C.',
     link: '#',
     github: 'https://github.com/MatiTC/portafolio.dev',
-    image: 'CITEC.jpg',
+    image: 'hololivePage.jpg',
     estado: ' Privado',
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    tags: [TAGS.ASTRO, TAGS.Boostrap,TAGS.MySql],
+    color: 'text-cyan-400'
   },
 ];
 ---
 
-<section class="grid grid-cols-2 gap-4 mt-6">
+<section class="grid grid-cols-auto-fill-minmax-300 gap-x-4 gap-y-8">
   {
     PROJECTS.map((proyect) => (
-      <div
-        class="max-w-sm  p-4 
-        border border-s border-gray-200  bg-[#2a323d] rounded-lg shadow
-      "
-      >
+      <div class="mx-auto max-w-sm p-4 border border-s rounded-lg bg-[#2a323d] shadow opacity-90 text-slate-100">
         <CardProyects {...proyect} />
       </div>
     ))

@@ -6,4 +6,12 @@ export default {
   ],
   darkMode: 'class',
   plugins: [require('flowbite/plugin')],
+  theme: {
+    extend: {
+      gridTemplateColumns: {
+        'auto-fill-minmax-300': 'repeat(auto-fill, minmax(300px, 1fr))',
+        'auto-fit-300': 'repeat(auto-fit, minmax(300px, 1fr))',
+      },
+    },
+  },
 };

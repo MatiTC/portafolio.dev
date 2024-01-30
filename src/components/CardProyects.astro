@@ -4,61 +4,68 @@ import GitHub from './icons/GitHub.astro';
 import Lock from './icons/Lock.astro';
 import LockOpen from './icons/LockOpen.astro';
 import WebSite from './icons/WebSite.astro';
-import Separacion from './Separacion.astro';
-const { title, descripcion, link, github, image, alt, estado, tags } =
+const { title, descripcion, link, github, image, alt, estado, tags, color } =
   Astro.props;
 ---
 
-<div class="flex flex-col w-auto opacity-90">
+<div class="flex flex-col w-auto">
   <img
-    class="rounded-tl-g w-max h-48 border-solid border-2 border-blue-200"
+    class="rounded-tl-g w-max h-48 border-solid border-2"
     src={image}
     alt={alt}
   />
   <div class="flex flex-col justify-start p-4 px-2 h-40">
-    <div class="text-xl font-medium text-900 mb-2">
+    <div class=`text-xl font-medium mb-2  ${color}`>
       {title}
     </div>
-    <p class="mt-0 mb-3 font-normal text-white opacity-80 text-pretty">
+    <p class="mt-0 mb-3 font-normal text-pretty text-slate-300">
       {descripcion}
     </p>
   </div>
 
-  <hr class="my-2 border-white opacity-80 lg:my-2" />
+  <hr class="my-2 border-gray-200 opacity-80 lg:my-2" />
 
   <div class="flex flex-col justify-start p-4 px-2">
-    <div class="flex justify-start text-900 mb-2">Tecnologias</div>
-    <ul class="flex justify-start gap-x-2 flex-row mb-2">
+    <div
+      class="flex justify-start my-2 text-lg font-semibold underline decoration-sky-500 text-slate-100"
+    >
+      Tecnologias
+    </div>
+    <div class="grid grid-flow-col auto-cols-max gap-x-3 mb-2">
       {
         tags.map((tag: any) => (
-          <li class="relative group ">
-            <span
-              class={`flex gap-x-2 hover:bg-current hover:opacity-80 rounded-full text-xs bg-[#2a323d] ${tag.class}`}
-            >
-              <tag.icon class="size-6" />
+          <div class="relative group">
+            <span class="flex gap-x-2">
+              <tag.icon
+                class={`size-6 flex gap-x-2 rounded-full text-xs bg-[#2a323d] ${tag.class}
+              hover:bg-slate-900 hover:opacity-90 
+              `}
+              />
             </span>
-          </li>
+          </div>
         ))
       }
-    </ul>
+    </div>
   </div>
-  <hr class="my-2 border-white opacity-80 lg:my-2" />
+  <hr class="my-2 border-gray-200 opacity-80 lg:my-2" />
 
   <div class="flex flex-col justify-start p-4 px-2">
-    <div class="flex justify-start text-900 mb-2">Estado del proyecto</div>
+    <div class="flex justify-start text-900 my-2 text-lg font-semibold underline decoration-pink-500 text-slate-100">
+      Estado del proyecto
+    </div>
     <div class="flex flex-row justify-start">
       {estado === 'Privado' ? <Lock /> : <LockOpen />}
-      <p class="mt-1 mx-2 font-normal text-white opacity-80 text-pretty">{estado}</p>
+      <p class="mt-1 mx-2 font-normal text-slate-300 text-pretty">{estado}</p>
     </div>
   </div>
 
-  <div class="p-2 flex flex-row justify-center">
+  <div class="p-4 md:p-2 flex justify-around">
     <ButtonLink href={github}>
-      <GitHub class="size-6" />
+      <GitHub class="size-8 md:size-6" />
       GitHub
     </ButtonLink>
     <ButtonLink href={link}>
-      <WebSite class="size-6" />
+      <WebSite class="size-8 md:size-6" />
       Web
     </ButtonLink>
   </div>

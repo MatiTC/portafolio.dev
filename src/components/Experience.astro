@@ -1,5 +1,5 @@
 ---
-import Separacion from "./Separacion.astro";
+import Separacion from './Separacion.astro';
 
 export interface props {
   title: string;
@@ -9,64 +9,83 @@ export interface props {
   link?: string;
   color: string;
 }
-const { title, date, description, technology, link, color, place, spell } =
-  Astro.props;
+const {
+  title,
+  date,
+  description,
+  technology,
+  link,
+  color,
+  place,
+  spell,
+  tags,
+} = Astro.props;
 ---
 
-<li class="mb-10 ms-6 px-4">
+<div class="flex items-center">
   <span
-    class=`absolute flex items-center justify-center 
-    size-6 
-    bg-white opacity-90
+    class=`absolute flex items-center justify-center
+    size-5
+    bg-slate-300 ring-8 ring-slate-300
     rounded-full -start-3 
-    ring-8 ring-white 
-    ${color} text-2xl font-bold`
+    ring-8 ring-red`
   >
-    {spell}
+    <strong class=`${color} text-2xl font-bold`> {spell}</strong>
   </span>
 
-  <h2 class=`flex items-start mb-2 text-2xl font-bold ${color}`>
+  <h2 class=`text-2xl font-bold ${color}`>
     {place}
   </h2>
-
-  <div class="bg-[#2a323d] p-6
-    border border-solid opacity-80 border-white
-    ">
-    <h3 class=`flex items-center text-2xl font-bold mb-2 mt-2  text-white`>
-      {title}
-    </h3>
-    <time class="block mb-6 mt-4 text-sm font-normal leading-none"
-      >{date}</time
-    >
-    <p
-      class="mb-4 text-base font-normal text-md text-gray-100 text-pretty"
-    >
-      {description}
-    </p>
-    <Separacion class="lg:my-4"/>
-    <p>Tecnologias</p>
-    <p>{technology}</p>
+</div>
+<div
+  class="bg-[#2a323d] p-4 mt-4 md:py-4 md:px-4
+    border border-s rounded-lg opacity-90 text-slate-100"
+>
+  <h3 class=`flex items-center text-xl font-semibold text-slate-100`>
+    {title}
+  </h3>
+  <time class="block mb-6 mt-2 text-sm font-normal leading-none text-slate-100">{date}</time>
+  <p class="mb-4 text-base font-normal text-md text-pretty text-slate-300">
+    {description}
+  </p>
+  <Separacion class="lg:my-4" />
+  <p class="my-2 text-lg font-semibold underline decoration-sky-500 text-slate-100">
+    Tecnologias
+  </p>
+  <div class="grid grid-flow-col auto-cols-max gap-x-3 mb-2">
+    {
+      tags.map((tag: any) => (
+        <div class="relative group">
+          <span class="flex gap-x-2">
+            <tag.icon
+              class={`size-6 flex gap-x-2 rounded-full text-xs bg-[#2a323d] ${tag.class}
+              hover:bg-slate-900 hover:opacity-90 
+              `}
+            />
+          </span>
+        </div>
+      ))
+    }
   </div>
-  
-  <!-- renderizado condicional. Si viene "link" renderiza lo que se enuentra dentro de &&() -->
-  {
-    link && (
-      <a
-        href="#"
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+</div>
+<!-- renderizado condicional. Si viene "link" renderiza lo que se enuentra dentro de &&() -->
+<!-- {
+  link && (
+    <a
+      href="#"
+      class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+      <svg
+        class="w-3.5 h-3.5 me-2.5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 20 20"
       >
-        <svg
-          class="w-3.5 h-3.5 me-2.5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
-          <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
-        </svg>{' '}
-        MAS +
-      </a>
-    )
-  }
-</li>
+        <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
+        <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+      </svg>{' '}
+      MAS +
+    </a>
+  )
+} -->

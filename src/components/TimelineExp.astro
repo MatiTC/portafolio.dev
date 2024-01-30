@@ -1,16 +1,18 @@
 ---
 import Experience from './Experience.astro';
+import { TAGS } from './Proyects.astro';
 
 const EXPERIENCE = [
   {
     place: 'Universidad del Bío-Bío',
     spell: 'U',
     title: 'Aplicacíon web CITEC',
-    date: 'Segundo semetre 2023',
+    date: '2023',
     description:
       'Diseñar y desarrollar una aplicación web intuitiva y escalable para el monitoreo, registro y análisis de variables ambientales en tiempo real del edificio sensorizado del CITEC de Universidad del Bío-Bío',
     technology: 'Reacts, Node.js',
-    color: 'text-[#0092ff]'
+    color: 'text-blue-700',
+    tags: [TAGS.REACT, TAGS.Vite, TAGS.Boostrap, TAGS.NODE,  TAGS.EXPRESS, TAGS.MySql]
   },
   {
     place: 'Freelancer',
@@ -20,7 +22,8 @@ const EXPERIENCE = [
     description:
       'Desarrollo de la aplicacion open source de galeria de Hololive Japon, Indonesia e Ingles. Aporte de la comunidad de Hololive Hispana',
     technology: 'Reacts, Boostrap',
-    color: 'text-[#ffaff8]'
+    color: 'text-fuchsia-700',
+    tags: [TAGS.ASTRO, TAGS.Vite, TAGS.TAILWIND]
   },
 
 ];
@@ -28,10 +31,10 @@ const EXPERIENCE = [
 
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">
+<ol class="relative border-s ml-3 ">
   {
     EXPERIENCE.map((experience) => (
-      <li class="mb-10 ms-6">
+      <li class="mb-10 ms-6 px-4 ">
         <Experience {...experience} />
       </li>
     ))
