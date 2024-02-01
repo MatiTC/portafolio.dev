@@ -1,6 +1,7 @@
 ---
 import Moon from './icons/Moon.astro';
 import Sun from './icons/Sun.astro';
+import SunMoon from './icons/SunMoon.astro';
 ---
 
 <label for="theme-toggler" class="flex items-center cursor-pointer">
@@ -19,8 +20,7 @@ import Sun from './icons/Sun.astro';
         class="dot absolute left-1 top-1 w-6 h-6 rounded-full grid place-items-center bg-neutral-100 dark:bg-neutral-900 transition duration-300 peer-checked:translate-x-full"
       >
         <div class="flex">
-          <Moon style="visibility: visible;" />
-          <Sun style="visibility: hidden;" />
+          <SunMoon/>
         </div>
       </div>
     </div>

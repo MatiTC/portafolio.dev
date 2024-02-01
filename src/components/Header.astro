@@ -1,8 +1,9 @@
 ---
 import ThemeToggler from './ThemeToggler.astro';
+import Dropdown from './Dropdown.astro';
 
 const efectoHoverEpico =
-  'hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base';
+  'dark:hover:bg-white/10 hover:bg-white/30  rounded-full px-2 sm:px-3 transition text-sm sm:text-base';
 ---
 
 <header
@@ -16,27 +17,54 @@ const efectoHoverEpico =
   `}
 >
   <nav
-    class="border
-    font-semibold
-    rounded-full
-    px-3
-    py-1
-    flex
-    flex-row
-    items-center
-    backdrop-blur-2xl
-    dark:border-black
-    borde-white
-    dark:text-slate-100
-    text-slate-800
-    dark:bg-stone-900
-    bg-stone-300"
+    class={`
+      border
+      font-semibold
+      rounded-full
+      px-3
+      py-1
+      flex
+      flex-row
+      items-center
+      backdrop-blur-2xl
+      dark:border-black
+      borde-white
+      dark:text-slate-100
+      text-slate-800
+      dark:bg-stone-900
+      bg-stone-300
+      lg:flex
+      sm:flex
+      md:flex
+      sm:items-center
+      sm:space-x-4
+    `}
   >
-    <a class={efectoHoverEpico} href="/#top">Inicio</a>
-    <a class={efectoHoverEpico} href="/#experiencia">Experiencias</a>
-    <a class={efectoHoverEpico} href="/#proyectos">Projectos</a>
-    <a class={efectoHoverEpico} href="/#contribuciones">Estudios</a>
-    <a class={efectoHoverEpico} href="/#sobre-mi">Sobre mí</a>
-    <ThemeToggler />
+    <div
+      class={`
+        hidden
+        sm:flex
+        font-semibold
+        rounded-full
+        px-3
+        py-1
+        items-center
+        backdrop-blur-2xl
+        dark:border-black
+        border-white
+        dark:text-slate-100
+        text-slate-800
+        dark:bg-stone-900
+        bg-stone-300
+      `}
+    >
+      <a class={efectoHoverEpico} href="/#top">Inicio</a>
+      <a class={efectoHoverEpico} href="/#experiencia">Experiencias</a>
+      <a class={efectoHoverEpico} href="/#proyectos">Proyectos</a>
+      <a class={efectoHoverEpico} href="/#contribuciones">Estudios</a>
+      <a class={efectoHoverEpico} href="/#sobre-mi">Sobre mí</a>
+      <ThemeToggler />
+    </div>
+    <Dropdown efecto={efectoHoverEpico} />
   </nav>
 </header>

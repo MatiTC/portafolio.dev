@@ -8,7 +8,7 @@ enum TailwindTheme {
   
       const htmlTag = document.querySelector("html")!;
       const themeMetaTag = document.head.children.namedItem("theme-color");
-  
+
       // @ts-ignore
       if (themeMetaTag) { themeMetaTag.content = isDarkThemeSelected ? "#e5e5e5" : "#262626"; }
   

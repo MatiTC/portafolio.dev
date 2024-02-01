@@ -21,12 +21,21 @@
       if ((!storedTheme && userPrefersDarkMode) || isDarkThemeSelected) {
         localStorage.setItem(STORAGE_ITEM_NAME, TW_DARK_THEME);
         document.querySelector('html').classList.add(TW_DARK_THEME);
-        document.head.children.namedItem('theme-color').content = '#262626';
+
+        const themeColorMeta = document.head.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+          themeColorMeta.content = '#262626';
+        }
       } else {
-        // we already render light theme
+        // ya estamos usando el tema claro
         localStorage.setItem(STORAGE_ITEM_NAME, TW_LIGHT_THEME);
-        document.head.children.namedItem('theme-color').content = '#e5e5e5';
+
+        const themeColorMeta = document.head.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+          themeColorMeta.content = '#e5e5e5';
+        }
       }
     }
   })();
 </script>
+
